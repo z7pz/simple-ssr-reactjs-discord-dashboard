@@ -10,7 +10,7 @@ export default class extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>react-ssr-tsx-starter</title>
+          <title>Simple discord dashboard</title>
         </Head>
         <body>
           <Main />

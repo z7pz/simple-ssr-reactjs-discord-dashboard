@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import { Head } from '@react-ssr/express';
+import React from 'react';
+import '../public/app.css';
 
-const Index = (props) => {
-  const [message, setMessage] = useState('waiting...');
-
-  const onClick = () => setMessage('This is a react-ssr!');
-
+const App = ({ guilds }) => {
+  console.log(  guilds  )
   return (
-    <React.Fragment>
-      <Head>
-        <title>An example of @react-ssr/express</title>
-      </Head>
-      <p>Hello {props.user.name}!</p>
-      <button onClick={onClick}>Click Me</button>
-      <p>Message from state: {message}</p>
-    </React.Fragment>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}} className="App">
+      <h1>Bot Servers :</h1>
+          <br />
+      {guilds.map(c => (
+        <div>
+          <div style={{border: '1px solid black', padding: '10px', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', width: '100%'}} >
+          <h1>{c.name}</h1>
+          <p>{c.id}</p>
+          </div>
+        </div>
+      ))}
+    </div>
   );
-};
+}
 
-export default Index;
+export default App;
